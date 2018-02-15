@@ -61,13 +61,9 @@ const getColorPalette = () => {
 		    });
 		    return rlPromise.then(rbg2 => {
 			    const rl = (0.2126 * rgb2.r2) + (0.7152 * rgb2.g2) + (0.0722 * rgb2.b2);
-			    return(rl);
-			    })
-		    	.then(rl => {
-		    		roundedRL = Math.round(100*rl)/100
-		    		state.rlValues.push(roundedRL);
-		    		// console.log(state.rlValues, 'hi')
-		    	});
+		    	const roundedRL = Math.round(100*rl)/100
+		    	state.rlValues.push(roundedRL);
+		    });
 
 		},
 		editColor: () => {
