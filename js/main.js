@@ -32,9 +32,6 @@ const getColorPalette = () => {
 		    const b = bigint & 255;
 		    const rgbColor = "(" + r + "," + g + "," + b + ")";
 		    state.rgbColors.push(rgbColor);
-		    let r2 = '';
-		    let g2 = '';
-		    let b2 = '';
 		    let rgb2 = {
 		    	r2: '',
 		    	g2: '',
@@ -43,28 +40,22 @@ const getColorPalette = () => {
 		    //ADD RL
 		    const rlPromise = new Promise((resolve, reject) => {
 		    	if (r <= 10) {
-		    		r2 = r / 3294;
-		    		rgb2.r2 = r2;
+		    		rgb2.r2 = r / 3294;
 			    }
 			    else {
-			    	r2 = Math.pow(r / 269 + 0.0513, 2.4);
-			    	rgb2.r2 = r2;
+			    	rgb2.r2 = Math.pow(r / 269 + 0.0513, 2.4);
 			    }
 			    if (g <= 10) {
-		    		g2 = g / 3294;
-		    		rgb2.g2 = g2;
+		    		rgb2.g2 = g / 3294;
 			    }
 			    else {
-			    	g2 = Math.pow(g / 269 + 0.0513, 2.4);
-			    	rgb2.g2 = g2;
+			    	rgb2.g2 = Math.pow(g / 269 + 0.0513, 2.4);
 			    }
 			    if (b <= 10) {
-		    		b2 = b / 3294;
-		    		rgb2.b2 = b2;
+		    		rgb2.b2 = b / 3294;
 			    }
 			    else {
-			    	b2 = Math.pow(b / 269 + 0.0513, 2.4);
-			    	rgb2.b2 = b2;
+			    	rgb2.b2 = Math.pow(b / 269 + 0.0513, 2.4);
 			    }
 			    resolve(rgb2);
 		    });
